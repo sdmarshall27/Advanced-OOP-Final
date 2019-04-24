@@ -5,6 +5,9 @@
  */
 package finalprojectbank;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author ersse
@@ -12,7 +15,7 @@ package finalprojectbank;
 public class bank {
     
     //list of customers with their Id, last name, accounts, password, admin.
-    
+    private List<Customer> Customers = new ArrayList(); 
     
     
     public bank( ) {

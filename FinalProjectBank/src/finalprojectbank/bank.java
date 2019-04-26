@@ -48,4 +48,13 @@ public class bank {
         }
     }
     
+    public Boolean userCheck(String name, String password) {
+        for(int i = 0; i < Customers.size(); i++) {
+            if(Customers.get(i).getLastName().equals(name) && Customers.get(i).getPassword().equals(password))
+                return true;
+        }
+        
+        return false;
+    }
+    
 }

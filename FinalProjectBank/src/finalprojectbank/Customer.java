@@ -13,26 +13,21 @@ package finalprojectbank;
  */
 public class Customer {
     
-    private int ID;
     private String firstName;
     private String lastName; 
     private String password;
 
-         
-    public Customer(int newID, String newFirstName, String newLastName, 
-            String newPassword) { 
-        
-        ID = newID;
-        firstName = newFirstName;
-        lastName = newLastName;
-        password = newPassword; 
-        
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public int getID() { 
-        return ID;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-    
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     
     public String getFirstName() {
         return firstName;

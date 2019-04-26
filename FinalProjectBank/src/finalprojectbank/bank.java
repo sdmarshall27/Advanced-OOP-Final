@@ -6,7 +6,9 @@
 package finalprojectbank;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -44,16 +46,6 @@ public class bank {
                 break;
             
         }
-    }
-    
-    public Boolean userCheck(String name, String password) {
-        for(int i = 0; i < Customers.size(); i++) { 
-           if(Customers.get(i).getLastName().equals(name) && Customers.get(i).getPassword().equals(password)) {
-               current = Customers.get(i);
-               return true;
-           }
-        }
-        return false;
     }
     
 }

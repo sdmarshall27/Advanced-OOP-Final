@@ -19,6 +19,7 @@ public class bank {
     //list of customers with their Id, last name, accounts, password, admin.
     private List<Customer> Customers = new ArrayList(); 
     private Customer current;
+    private static Integer CUSTOMERS_IN_BANK; 
     
     public bank( ) {
         
@@ -57,4 +58,28 @@ public class bank {
         return false;
     }
     
+    public void addCustomers (Integer customersWanted) {
+        Map<Integer, Customer> Customers = new HashMap(); 
+        
+        for (CUSTOMERS_IN_BANK=CUSTOMERS_IN_BANK; CUSTOMERS_IN_BANK < CUSTOMERS_IN_BANK + customersWanted; CUSTOMERS_IN_BANK++) {
+            Customers.put(CUSTOMERS_IN_BANK, new Customer()); 
+        }
+    }
+    
+//    public void deposit(double cash) {
+//        if(cash > 0) {
+//            this.balance += cash;
+//        }
+//    }
+//    
+//    public Boolean withdraw(double cash) {
+//        Boolean success = false;
+//        
+//        if(this.balance >= cash && cash > 0 ) {
+//            this.balance -= cash;
+//            success = true;
+//        }
+//        
+//        return success;
+//    }
 }

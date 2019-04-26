@@ -16,8 +16,7 @@ import java.util.Map;
  */
 public class bank {
     
-    //list of customers with their Id, last name, accounts, password, admin.
-    private List<Customer> Customers = new ArrayList(); 
+    Map<Integer, Customer> Customers = new HashMap();
     private Customer current;
     private static Integer CUSTOMERS_IN_BANK; 
     
@@ -58,9 +57,7 @@ public class bank {
         return false;
     }
     
-    public void addCustomers (Integer customersWanted) {
-        Map<Integer, Customer> Customers = new HashMap(); 
-        
+    public void addCustomers (Integer customersWanted) {        
         for (CUSTOMERS_IN_BANK=CUSTOMERS_IN_BANK; CUSTOMERS_IN_BANK < CUSTOMERS_IN_BANK + customersWanted; CUSTOMERS_IN_BANK++) {
             Customers.put(CUSTOMERS_IN_BANK, new Customer()); 
         }

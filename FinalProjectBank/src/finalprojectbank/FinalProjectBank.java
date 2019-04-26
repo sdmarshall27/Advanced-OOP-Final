@@ -23,46 +23,55 @@ public class FinalProjectBank {
         Scanner input = new Scanner(System.in);
         String name;
         String password;
+        String newUser = "yes";       
+        Boolean stay = true;
+        Boolean check = false;
         
         String option;
         
         bank b1 = new bank();
         
-        System.out.println("Front teller Erno: Who are you?");
-        System.out.println("Name (if you want to logout type 'q'): ");
-
-        //enter in a given last name and password
-        name = input.next();
         
-        //System.out.println("*Enters Bank*");
-        while(name != new Character('q').toString()) {
-            System.out.println("Front teller Erno: Who are you?");
-            System.out.println("Name (if you want to logout type 'q'): ");
+        while(stay == true) {
+            if(newUser.equals("yes")) {
+                while(check == false) {
+                    System.out.println("Erno: Who are you?");
+                    //enter in a given last name and password
+                    System.out.println("Name: (if you want to exit type 'quit') ");
+                    name = input.next();
+                    if(name.equals("quit")) {
+                        System.out.println("Erno: Thank you and have a great day.");
+                        System.exit(0);
+                    }
+                    System.out.println("Password: ");
+                    password = input.next();
 
-            //enter in a given last name and password
-            name = input.next();
-            
-            System.out.println("Password: ");
-            password = input.next();
+                    check = b1.userCheck(name, password);
+                    if(check == false)
+                        System.out.println("User not found please try again");
+                }
+                //check to see if the two are viable. If not output the password dosnt work.
 
-            //check to see if the two are viable. If not output the password dosnt work.
-
-            System.out.println("Erno: What can I help you with ");
-            //we can make it to where the options are deposit, withdrawl, apply for loan, view accounts
-            //We can also have another option and call it admin to view total money in the bank. 
-            //have a switch statement within bank class.
-            option = input.next();
-
-            b1.choice(option);
-
-            while(option != "quit") {
-                System.out.println("Erno: Is there anything esle I can assist you with.");
+                System.out.println("Erno: What can I help you with? (deposit, withdrawl, loan, view, admin) ");
+                //We can also have another option and call it admin to view total money in the bank. 
+                //have a switch statement within bank class.
                 option = input.next();
+
                 b1.choice(option);
+
+                while(!option.equals("quit")) {
+                    System.out.println("Erno: Is there anything else I can assist you with.");
+                    option = input.next();
+                    b1.choice(option);
+                }
+                System.out.println("Erno: would you like to continue?");
+                newUser = input.next();
             }
+            else 
+                stay = false;
         }
 
-            System.out.println("Erno: Thank you and have a great day.");
+        System.out.println("Erno: Thank you and have a great day.");
         
         
         

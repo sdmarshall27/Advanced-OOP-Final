@@ -6,7 +6,9 @@
 package finalprojectbank;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -16,7 +18,7 @@ public class bank {
     
     //list of customers with their Id, last name, accounts, password, admin.
     private List<Customer> Customers = new ArrayList(); 
-    
+    private static Integer CUSTOMERS_IN_BANK = 0; 
     
     public bank( ) {
         
@@ -44,4 +46,28 @@ public class bank {
         }
     }
     
+    public void createCustomers (Integer customersWanted) {
+        Map<Integer, Customer> customersMap = new HashMap(); 
+        
+        for(CUSTOMERS_IN_BANK = CUSTOMERS_IN_BANK; CUSTOMERS_IN_BANK < customersWanted; CUSTOMERS_IN_BANK++) { 
+            customersMap.put(CUSTOMERS_IN_BANK, new Customer()); 
+        }
+    }
+    
+//    public void deposit(double cash) {
+//        if(cash > 0) {
+//            this.balance += cash;
+//        }
+//    }
+//    
+//    public Boolean withdraw(double cash) {
+//        Boolean success = false;
+//        
+//        if(this.balance >= cash && cash > 0 ) {
+//            this.balance -= cash;
+//            success = true;
+//        }
+//        
+//        return success;
+//    }
 }

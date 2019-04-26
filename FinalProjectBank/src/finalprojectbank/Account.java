@@ -35,31 +35,4 @@ public class Account {
     public void setInterestRate(double interestRate) {
         this.interestRate = interestRate;
     }
-    
-    public void deposit(double cash) {
-        if(cash > 0) {
-            this.balance += cash;
-        }
-    }
-    
-    public Boolean withdraw(double cash) {
-        Boolean success = false;
-        
-        if(this.balance >= cash && cash > 0 ) {
-            this.balance -= cash;
-            success = true;
-        }
-        
-        return success;
-    }
-    
-    public void calculateInterest() {
-        this.balance += this.balance * this.interestRate;
-    }
-/*    
-    @Override
-    public String toString() {
-        return this.id + " | " + this.balance + " balance";
-    }
-*/
 }

@@ -53,12 +53,12 @@ public class Customer {
         return password;
     }
 
-    public Account getSavingsAccount() {
-        return SavingsAccount;
+    public double getSavingsAccount() {
+        return SavingsAccount.getBalance();
     }
 
-    public Account getCheckingAccount() {
-        return CheckingAccount;
+    public double getCheckingAccount() {
+        return CheckingAccount.getBalance();
     }
     
     

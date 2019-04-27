@@ -20,8 +20,28 @@ public class bank {
     private List<Customer> Customers = new ArrayList();
     private Customer current;
     private static Integer CUSTOMERS_IN_BANK; 
+    private Customer c1;
+    
+    private Vault v1 = new Vault();
+    private double addCash;
+    
+    //Customers.get(0) = new Customer("Khan", "123", 50.00, 5.00);
     
     public bank( ) {
+        c1 = new Customer("Khan", "123", 50.00, 5.00);
+        Customers.add(c1);
+        c1 = new Customer("Marshall", "abc", 5000.00, 500.00);
+        Customers.add(c1);
+        c1 = new Customer("Senor", "password", 10000.00, 5.00);
+        Customers.add(c1);
+        
+        for(int i = 0; i < Customers.size(); i++) {
+            addCash = addCash + (Customers.get(i).getCheckingAccount() + Customers.get(i).getSavingsAccount());
+        }
+        
+        v1.addCashToVault(addCash);
+        
+        
         
     }
     
@@ -52,6 +72,8 @@ public class bank {
     public Boolean userCheck(String name, String password) {
         for(int i = 0; i < Customers.size(); i++) {
             if(Customers.get(i).getLastName().equals(name) && Customers.get(i).getPassword().equals(password))
+                current = Customers.get(i);
+            
                 return true;
         }
         

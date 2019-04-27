@@ -10,17 +10,17 @@ package finalprojectbank;
  * @author steven
  */
 public class Vault {
-    private Integer totalCash; 
+    private double totalCash; 
     
     public Vault() {
         this.totalCash = 0; 
     }
     
-    public void addCashToVault(Integer cash) {
+    public void addCashToVault(double cash) {
         this.totalCash += cash; 
     }
 
-    public Integer getTotalCash() {
+    public double getTotalCash() {
         return totalCash;
     }
 }

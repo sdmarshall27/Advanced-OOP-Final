@@ -6,8 +6,9 @@
 package finalprojectbank;
 
 /**
- *
- * @author khan7
+ * @author Sheraz 
+ * @version 1.0 
+ * 
  */
 public enum AccountType {
     Savings, 

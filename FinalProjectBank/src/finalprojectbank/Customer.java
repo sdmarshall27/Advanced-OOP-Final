@@ -16,8 +16,17 @@ public class Customer {
     private String firstName;
     private String lastName; 
     private String password;
-    private double SavingsAccount; 
-    private double CheckingAccount;
+    private Account SavingsAccount; 
+    private Account CheckingAccount; 
+    
+    public Customer(String newLastName, String newPW, Double StartSBalance, 
+            Double StartCBalance) {
+         lastName = newLastName; 
+         password = newPW; 
+         SavingsAccount = new Account(AccountType.Savings, 0.06, StartSBalance); 
+         CheckingAccount = new Account(AccountType.Checking, 0.00, StartCBalance); 
+        
+    }
 
 
     public void setFirstName(String firstName) {
@@ -44,11 +53,11 @@ public class Customer {
         return password;
     }
 
-    public Double getSavingsAccount() {
+    public Account getSavingsAccount() {
         return SavingsAccount;
     }
 
-    public Double getCheckingAccount() {
+    public Account getCheckingAccount() {
         return CheckingAccount;
     }
     

@@ -15,8 +15,9 @@ import java.util.Map;
  * @author ersse
  */
 public class bank {
-    
-    Map<Integer, Customer> Customers = new HashMap();
+    //sheraz and I are going to work with a list cause we dont really know how maps work
+    //Map<Integer, Customer> Customers = new HashMap();
+    private List<Customer> Customers = new ArrayList();
     private Customer current;
     private static Integer CUSTOMERS_IN_BANK; 
     
@@ -56,13 +57,13 @@ public class bank {
         
         return false;
     }
-    
+/*    
     public void addCustomers (Integer customersWanted) {        
         for (CUSTOMERS_IN_BANK=CUSTOMERS_IN_BANK; CUSTOMERS_IN_BANK < CUSTOMERS_IN_BANK + customersWanted; CUSTOMERS_IN_BANK++) {
             Customers.put(CUSTOMERS_IN_BANK, new Customer()); 
         }
     }
-    
+*/   
 //    public void deposit(double cash) {
 //        if(cash > 0) {
 //            this.balance += cash;

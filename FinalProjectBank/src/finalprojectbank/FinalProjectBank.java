@@ -30,7 +30,7 @@ public class FinalProjectBank {
         String option;
         
         bank b1 = new bank();
-        
+        //b1.addCustomers(3);
         
         while(stay == true) {
             if(newUser.equals("yes")) {

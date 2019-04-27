@@ -16,7 +16,10 @@ public class Customer {
     private String firstName;
     private String lastName; 
     private String password;
-    
+    private double SavingsAccount; 
+    private double CheckingAccount;
+
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -33,16 +36,22 @@ public class Customer {
         return firstName;
     }
 
-    
     public String getLastName() {
         return lastName;
     }
 
-    
     public String getPassword() {
         return password;
     }
 
+    public Double getSavingsAccount() {
+        return SavingsAccount;
+    }
+
+    public Double getCheckingAccount() {
+        return CheckingAccount;
+    }
+    
     
 /*    
     @Override

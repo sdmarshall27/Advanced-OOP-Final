@@ -12,12 +12,14 @@ package finalprojectbank;
 public class Account {
     private Double balance;
     private Double interestRate;
-    private AccountType accountType;
+    private AccountType accountType; 
         
-    public Account(AccountType accountType, Double interestRate) {
-        this.balance = 0.0;
+    public Account(AccountType accountType, Double interestRate, 
+            Double StartingBalance) {
+        this.balance = StartingBalance;
         this.interestRate = interestRate;
-        this.accountType = accountType;
+        this.accountType = accountType; 
+        
     }
     
     public AccountType getAccountType() {

@@ -25,15 +25,16 @@ public class FinalProjectBank {
         String password;
         String newUser = "yes";       
         Boolean stay = true;
-        Boolean check = false;
+        Boolean check;
         
         String option;
         
         bank b1 = new bank();
         //b1.addCustomers(3);
-        
+        //System.out.println(b1.getallCash());
         while(stay == true) {
             if(newUser.equals("yes")) {
+                check = false;
                 while(check == false) {
                     System.out.println("Erno: Who are you?");
                     //enter in a given last name and password
@@ -45,7 +46,7 @@ public class FinalProjectBank {
                     }
                     System.out.println("Password: ");
                     password = input.next();
-
+                    //b1.userCheck(name, password);
                     check = b1.userCheck(name, password);
                     if(check == false)
                         System.out.println("User not found please try again");

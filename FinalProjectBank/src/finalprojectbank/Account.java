@@ -37,4 +37,13 @@ public class Account {
     public void setInterestRate(double interestRate) {
         this.interestRate = interestRate;
     }
+    
+    public void deposit(double ammount) {
+        balance += ammount;
+    }
+    
+    public void withdrawl(double ammount) {
+        balance -= ammount;
+    }
+
 }

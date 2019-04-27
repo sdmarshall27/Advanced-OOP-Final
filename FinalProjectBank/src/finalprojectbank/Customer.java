@@ -18,11 +18,13 @@ public class Customer {
     private String password;
     private Account SavingsAccount; 
     private Account CheckingAccount; 
+    private boolean adminStats;
     
     public Customer(String newLastName, String newPW, Double StartSBalance, 
-            Double StartCBalance) {
+            Double StartCBalance, boolean admin) {
          lastName = newLastName; 
          password = newPW; 
+         adminStats = admin;
          SavingsAccount = new Account(AccountType.Savings, 0.06, StartSBalance); 
          CheckingAccount = new Account(AccountType.Checking, 0.00, StartCBalance); 
         
@@ -52,6 +54,10 @@ public class Customer {
     public String getPassword() {
         return password;
     }
+    
+    public boolean getAdmin() {
+        return adminStats;
+    }
 
     public double getSavingsAccount() {
         return SavingsAccount.getBalance();
@@ -61,7 +67,38 @@ public class Customer {
         return CheckingAccount.getBalance();
     }
     
+    public void deposit(double ammount, char choice) {
+        if(choice == 'S')
+            SavingsAccount.deposit(ammount);
+        else if(choice == 'C')
+            CheckingAccount.deposit(ammount);
+    }
     
+    public boolean withdrawl(double ammount, char choice) {
+        if(choice == 'S') {
+            if(ammount > SavingsAccount.getBalance()) {
+                System.out.println("You do not have enough money in the savings account to withdrawl $" + ammount);
+                return false;
+            }
+            else {
+                SavingsAccount.withdrawl(ammount);
+                return true;
+            }
+        }
+        
+        if(choice == 'C') {
+            if(ammount > CheckingAccount.getBalance()) {
+                System.out.println("You do not have enough money in the savings account to withdrawl $" + ammount);
+                return false;
+            }
+            else {
+                CheckingAccount.withdrawl(ammount);
+                return true;
+            }
+        }
+        
+        return false;
+    }
 /*    
     @Override
     public String toString() {

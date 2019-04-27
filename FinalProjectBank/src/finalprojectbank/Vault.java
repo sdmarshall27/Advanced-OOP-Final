@@ -19,6 +19,10 @@ public class Vault {
     public void addCashToVault(double cash) {
         this.totalCash += cash; 
     }
+    
+    public void removeCashFromVault(double cash) {
+        this.totalCash -= cash;
+    }
 
     public double getTotalCash() {
         return totalCash;

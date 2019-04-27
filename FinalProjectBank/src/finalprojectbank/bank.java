@@ -66,6 +66,7 @@ public class bank {
                 //shows accounts for the specific customer.
                 break;
             case "loan" :
+                loan();
                 //runs the loan system for the customer.
                 break;
             case "admin" :
@@ -146,6 +147,31 @@ public class bank {
             System.out.println("You are not permited to view this information!");
     }
 
+    public void loan() { 
+
+        double a;            // Amount Requested
+        double b = 0.06;     // Interest Rate
+        double c;            // Duration (in Months)
+
+        System.out.println("Please enter the Requested Amount: "); 
+        a = input.nextDouble();
+        
+        System.out.println("Your Interest Rate is: " + b); 
+        
+        System.out.println("Please enter the duration of the loan: "); 
+        c = input.nextDouble();
+
+        
+        Double MonthlyPayment = a * b * ( Math.pow( (1 + b), c ) )  /  ( Math.pow( (1 + b), c ) - 1);
+
+        Double TotalPayment = MonthlyPayment * c; 
+
+        
+        System.out.println("Your Monthly Payment is: $" + MonthlyPayment);        
+
+        System.out.println("Your Total Payment is: $" + TotalPayment);
+            
+    }
 
 /*    
     public void addCustomers (Integer customersWanted) {        
